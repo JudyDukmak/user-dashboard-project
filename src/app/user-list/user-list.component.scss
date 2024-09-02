@@ -1,5 +1,11 @@
-/* src/app/user-list/user-list.component.css */
 
+.loading {
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
 .user-list {
     display: flex;
     flex-direction: column;
@@ -50,4 +56,4 @@
     border: none;
     border-radius: 5px;
   }
-  
+ 

@@ -1,3 +1,10 @@
+.loading {
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
 .user-details {
     padding: 2rem;
     text-align: center;
@@ -25,4 +32,16 @@
       cursor: pointer;
     }
   }
+  ngx-spinner .spinner-layer {
+    border-color: #ff6347 !important;
+  }
+  
+  ngx-spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999; /* Ensure the spinner is on top */
+  }
+  
   

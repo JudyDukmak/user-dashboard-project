@@ -4,19 +4,22 @@ import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../header/header.component';
 
+
 @Component({
   selector: 'app-user-list',
   imports: [CommonModule, HeaderComponent, HttpClientModule, RouterModule],
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.scss'],
   standalone: true,
+  
 })
+
 export class UserListComponent implements OnInit {
   users: any[] = [];
   allUsers: any[] = [];
   currentPage = 1;
   noResults = false;
-
+  isLoading = false;
   constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit() {
@@ -24,13 +27,18 @@ export class UserListComponent implements OnInit {
   }
 
   loadUsers() {
+    this.isLoading = true;
     this.http.get<{ data: any[] }>(`https://reqres.in/api/users?page=${this.currentPage}`)
       .subscribe(data => {
         this.allUsers = [...this.allUsers, ...data.data];
         this.users = this.allUsers;
         this.noResults = this.users.length === 0;
+        this.isLoading = false;
+      }, () => {
+        this.isLoading = false; // Stop loading on error
       });
-  }
+      }    
+  
 
   filterUsersById(term: string): void {
     if (term.trim() === '') {
