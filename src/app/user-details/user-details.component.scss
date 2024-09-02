@@ -1,0 +1,28 @@
+.user-details {
+    padding: 2rem;
+    text-align: center;
+  
+    .user-avatar {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+  
+    .user-info {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+    }
+  
+    .back-button {
+      margin-top: 2rem;
+      padding: 0.5rem 1rem;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+  

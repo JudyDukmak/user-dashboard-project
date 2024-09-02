@@ -1,7 +1,9 @@
-<header>
-    <h1>Search for a user:</h1>
-    <input type="text" name="search"
-     placeholder="Search by User ID" 
-     [(ngModel)]="searchValue" 
-     (input)="searchUser()">
-</header>
+<header class="app-header">
+    <h1>User Dashboard</h1>
+    <input
+      type="text"
+      placeholder="Search by User ID"
+      [formControl]="searchControl"
+      class="search-bar"
+    />
+  </header>

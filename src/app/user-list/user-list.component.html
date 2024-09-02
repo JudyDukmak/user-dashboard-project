@@ -1,1 +1,17 @@
+<app-header (searchTerm)="onSearch($event)"></app-header>
 
+<div class="user-list">
+  <div *ngIf="users.length > 0; else noResultsTemplate">
+    <div class="user-card" *ngFor="let user of users" (click)="viewUserDetails(user.id)">
+      <img [src]="user.avatar" alt="{{ user.first_name }}" class="user-avatar" />
+      <div class="user-info">
+        <h3>{{ user.first_name }} {{ user.last_name }}</h3>
+        <p>User ID: {{ user.id }}</p>
+      </div>
+    </div>
+    <button (click)="loadMore()" class="load-more">Load More</button>
+  </div>
+  <ng-template #noResultsTemplate>
+    <p>No results found.</p>
+  </ng-template>
+</div>

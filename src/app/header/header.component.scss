@@ -1,3 +1,19 @@
-h1{
-    color: white;
-}
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .app-header h1 {
+    margin: 0;
+  }
+  
+  .search-bar {
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
